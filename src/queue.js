@@ -23,9 +23,16 @@ module.exports = class Queue {
   }
 
   enqueue(value) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (!this._q) this._q = new ListNode(value);
+ else{
+  let node = this._q;
+  while(node.next){
+    node = node.next;
   }
+  node.next=new ListNode(value);
+ }
+}
+  
 
   dequeue() {
     throw new NotImplementedError('Not implemented');
