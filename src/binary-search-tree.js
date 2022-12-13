@@ -39,8 +39,10 @@ module.exports = class BinarySearchTree {
   }
 
   has(data) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    if (this.search(this.root_node, data) === null)
+    return false;
+  else
+    return true;
   }
 
   find(/* data */) {
