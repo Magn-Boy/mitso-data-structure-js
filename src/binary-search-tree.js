@@ -140,10 +140,16 @@ findminnode(node) {
   
 }
 
-  min() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+min() 
+{
+  if (this.findminnode(this.root_node) === null)
+    return null;
+  else
+  {
+    let newNode = this.findminnode(this.root_node);
+    return newNode.data;
   }
+}
 
   max() {
     throw new NotImplementedError("Not implemented");
