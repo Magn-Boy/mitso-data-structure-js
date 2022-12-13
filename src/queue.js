@@ -35,8 +35,10 @@ module.exports = class Queue {
   
 
   dequeue() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (!this._q) return;
+    const x = this._q.value;
+    this._q = this._q.next;
+    return x;
   }
 
 }
