@@ -1,12 +1,12 @@
 const { NotImplementedError } = require("../extensions/index.js");
 
-// const { Node } = require('../extensions/list-tree.js');
 
-/**
- * Implement simple binary search tree according to task description
- * using Node from extensions
- */
+const { Node } = require('../extensions/list-tree.js');
+
 module.exports = class BinarySearchTree {
+  constructor() {
+    this.root_node = null; 
+  }
   root() {
     throw new NotImplementedError("Not implemented");
     // remove line with error and write your code here
