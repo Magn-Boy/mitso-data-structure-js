@@ -163,8 +163,18 @@ min()
     }
   }
 
-
-
-
-  
+  findmaxnode(node) 
+  {
+    if (node === null) 
+    {
+      return null;
+    }
+    else
+    {
+      if (node.right === null)
+         return node;
+      else
+         return this.findmaxnode(node.right);
+    }
+  }
 };
