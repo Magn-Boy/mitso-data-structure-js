@@ -8,13 +8,19 @@ module.exports = class BinarySearchTree {
     this.root_node = null; 
   }
   root() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    return this.root_node;
   }
 
-  add(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  add(data ) {
+    let newNode = new Node(data);
+    if (this.root_node === null) 
+    {
+        this.root_node = newNode;
+    } 
+    else 
+    {
+        this.insertNode(this.root_node, newNode); // helper method below
+    }
   }
 
   has(/* data */) {
