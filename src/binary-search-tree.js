@@ -152,7 +152,19 @@ min()
 }
 
   max() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    {
+      if (this.findmaxnode(this.root_node) === null)
+        return null;
+      else
+      {
+        let newNode = this.findmaxnode(this.root_node);
+        return newNode.data;
+      }
+    }
   }
+
+
+
+
+  
 };
