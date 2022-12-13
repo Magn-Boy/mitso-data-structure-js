@@ -20,7 +20,7 @@ module.exports = class Queue {
     // remove line with error and write your code here
   }
 
-  enqueue(/* value */) {
+  enqueue(value) {
     throw new NotImplementedError('Not implemented');
     // remove line with error and write your code here
   }
