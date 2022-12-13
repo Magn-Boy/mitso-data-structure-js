@@ -124,7 +124,21 @@ module.exports = class BinarySearchTree {
         return node;
     }
 }
+ 
+findminnode(node) {
+  if (node === null) 
+  {
+    return null;
+  }
+  else
+  {
+    if (node.left === null)
+      return node;
+    else
+      return this.findminnode(node.left);
+  }
   
+}
 
   min() {
     throw new NotImplementedError("Not implemented");
