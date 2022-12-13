@@ -71,10 +71,60 @@ module.exports = class BinarySearchTree {
       return newNode;
   }
 
-  remove(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  remove(data) {
+      return this.root_node = this.removeNode(this.root_node, data); // helper method below
   }
+
+  removeNode(node, data) 
+  {
+    if (node === null) 
+    {
+        return null;
+    // если данные, которые нужно удалить, меньше, чем данные корня, переходим к левому поддереву
+    } 
+    else 
+    if (data < node.data) 
+    {
+      node.left = this.removeNode(node.left, data);
+      return node;
+      // если данные, которые нужно удалить, больше, чем данные корня, переходим к правому поддереву
+    } 
+    else 
+    if (data > node.data) 
+    {
+      node.right = this.removeNode(node.right, data);
+      return node;
+    // если данные такие как данные корня, удаляем узел
+    } else 
+    {
+        // удаляем узел без потомков (листовой узел (leaf) или крайний)
+        if (node.left === null && node.right === null) 
+        {
+            node = null;
+            return node;
+        }
+        // удаляем узел с одним потомком
+        if (node.left === null) 
+        {
+            node = node.right;
+            return node;
+        } 
+        else 
+        if(node.right === null) 
+        {
+            node = node.left;
+            return node;
+        }
+        // удаляем узел с двумя потомками
+        // minNode правого поддерева хранится в новом узле
+        
+        let newNode = this.findminnode(node.right);
+        node.data = newNode.data;
+        node.right = this.removeNode(node.right, newNode.data);
+        return node;
+    }
+}
+  
 
   min() {
     throw new NotImplementedError("Not implemented");
